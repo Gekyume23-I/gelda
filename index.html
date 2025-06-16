@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Imagen Giratoria con Sonido</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+    }
+
+    #boton {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 15px 30px;
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    #imagen {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100vmin;
+      height: 100vmin;
+      object-fit: cover;
+      display: none;
+      animation: girar 5s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes girar {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <button id="boton" onclick="mostrarImagen()">Ver Imagen</button>
+  <img id="imagen" src="gordas.jpg" alt="Imagen giratoria">
+  <audio id="sonido" src="Stitch.mp3" loop></audio>
+
+  <script>
+    function mostrarImagen() {
+      document.getElementById('imagen').style.display = 'block';
+      document.getElementById('boton').style.display = 'none';
+      document.getElementById('sonido').play();
+    }
+  </script>
+
+</body>
+</html>
