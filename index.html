@@ -1,61 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Imagen Giratoria con Sonido</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      width: 100%;
-      height: 100%;
-      background-color: #000;
-    }
-
-    #boton {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 15px 30px;
-      font-size: 20px;
-      cursor: pointer;
-      z-index: 10;
-    }
-
-    #imagen {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100vmin;
-      height: 100vmin;
-      object-fit: cover;
-      display: none;
-      animation: girar 5s linear infinite;
-      z-index: 1;
-    }
-
-    @keyframes girar {
-      from { transform: translate(-50%, -50%) rotate(0deg); }
-      to { transform: translate(-50%, -50%) rotate(360deg); }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <title>Galería con sonidos por persona</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <button id="boton" onclick="mostrarImagen()">Ver Imagen</button>
-  <img id="imagen" src="dos.jpg" alt="Imagen giratoria">
-  <audio id="sonido" src="YaVanDos.opus" loop></audio>
+  <nav id="menu">
+    <a href="#" data-foto="irene.jpg" data-sonido="irene1.mp3">Irene</a>
+    <a href="#" data-foto="mario.jpg" data-sonido="mario.mp3">Mario</a>
+    <a href="#" data-foto="joseliyo.jpg" data-sonido="joseliyo.mp3">Joseliyo</a>
+  </nav>
 
-  <script>
-    function mostrarImagen() {
-      document.getElementById('imagen').style.display = 'block';
-      document.getElementById('boton').style.display = 'none';
-      document.getElementById('sonido').play();
-    }
-  </script>
+  <div id="contenedor">
+    <img id="foto" src="" alt="Foto de persona" />
+    <audio id="sonido" loop></audio>
+  </div>
 
+  <script src="js/js.js"></script>
 </body>
 </html>
