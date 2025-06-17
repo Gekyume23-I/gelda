@@ -21,12 +21,15 @@
         <h2>Recuerdos juntos</h2>
         <div id="carousel" class="carousel">
             <div class="carousel-images">
-                <img src="i2.jpg" alt="Recuerdo 1" class="carousel-item">
-                <img src="i1.webp" alt="Recuerdo 2" class="carousel-item">
+                <img src="i1.webp" alt="Recuerdo 1" class="carousel-item">
+                <img src="i2.jpg" alt="Recuerdo 2" class="carousel-item">
                 <img src="i3.jpg" alt="Recuerdo 3" class="carousel-item">
-                <img src="i4.jpg" alt="Recuerdo 4" class="carousel-item">
                 <!-- Puedes agregar más fotos aquí -->
             </div>
+
+            <!-- Flechas para navegar -->
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
         </div>
         <div class="frases">
             <p id="frase1">"La vida es más divertida cuando la compartes con alguien especial."</p>
@@ -40,6 +43,6 @@
         Tu navegador no soporta audio HTML5.
     </audio>
 
-    <script src="js/js.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

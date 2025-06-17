@@ -45,21 +45,52 @@ body {
 /* Carrusel */
 .carousel {
     position: relative;
-    width: 80%;
+    max-width: 80%;
     margin: 0 auto;
-    overflow: hidden; /* Para esconder las imágenes que se desplazan */
+    overflow: hidden; /* Esconde imágenes fuera del contenedor */
+    border-radius: 10px;
 }
 
 .carousel-images {
     display: flex;
-    transition: transform 1s ease-in-out; /* Animación para el desplazamiento */
+    transition: transform 1s ease-in-out;
 }
 
 .carousel-item {
     width: 100%; /* Cada imagen ocupa el 100% del contenedor */
     height: auto;
+    border-radius: 10px;
 }
 
+/* Flechas de navegación */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 2em;
+    color: #ff9a8b; /* Color anaranjado */
+    transform: translateY(-50%);
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Frases */
 .frases {
     margin-top: 30px;
     font-style: italic;

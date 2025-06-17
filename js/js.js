@@ -1,22 +1,18 @@
-// Carrusel de imágenes
 let currentIndex = 0;
 const items = document.querySelectorAll('.carousel-item');
 const totalItems = items.length;
 
-// Función para mostrar la siguiente imagen
-function showNextImage() {
-    currentIndex = (currentIndex + 1) % totalItems;
+// Mostrar la siguiente imagen
+function moveSlide(direction) {
+    currentIndex = (currentIndex + direction + totalItems) % totalItems; // Esto asegura que el índice se quede dentro de los límites
     document.querySelector('.carousel-images').style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
-// Configurar el intervalo para cambiar la imagen cada 3 segundos
-setInterval(showNextImage, 3000); // Cambiar imagen cada 3 segundos
-
-// Mostrar frases con animación
+// Configurar las frases
 let fraseIndex = 0;
 const frases = document.querySelectorAll('.frases p');
 
-// Función para mostrar frases
+// Mostrar frases con animación
 function showFrase() {
     frases[fraseIndex].style.display = 'block';
     frases[fraseIndex].style.animation = 'showFrases 5s ease-in-out';
