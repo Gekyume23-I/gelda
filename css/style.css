@@ -114,3 +114,27 @@ body {
         opacity: 0;
     }
 }
+
+/* Estilo para el botón */
+.start-btn {
+    background-color: #ff9a8b;  /* Fondo de color suave similar al de la bienvenida */
+    color: white;  /* Texto blanco */
+    font-size: 1.2em;  /* Un tamaño de fuente agradable */
+    padding: 15px 30px;  /* Espaciado interno del botón */
+    border: none;  /* Sin borde */
+    border-radius: 30px;  /* Bordes redondeados */
+    cursor: pointer;  /* Cambia el cursor cuando pasa sobre el botón */
+    transition: background-color 0.3s ease, transform 0.2s ease;  /* Transición para efectos */
+    margin-top: 20px;  /* Espacio superior respecto al contenido */
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.start-btn:hover {
+    background-color: #ff7a6d;  /* Cambio de color cuando pasa el mouse */
+    transform: scale(1.1);  /* Agranda un poco el botón para un efecto de interacción */
+}
+
+/* Efecto cuando el botón es presionado */
+.start-btn:active {
+    transform: scale(0.95);  /* Hace el botón más pequeño al hacer clic para efecto visual */
+}
