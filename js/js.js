@@ -14,14 +14,21 @@ const frases = document.querySelectorAll('.frases p');
 
 // Mostrar frases con animación
 function showFrase() {
+    // Ocultar la frase actual
+    frases.forEach(frase => {
+        frase.style.display = 'none';
+    });
+
+    // Mostrar la siguiente frase
     frases[fraseIndex].style.display = 'block';
     frases[fraseIndex].style.animation = 'showFrases 5s ease-in-out';
+    
+    // Incrementar el índice para la siguiente frase
     fraseIndex = (fraseIndex + 1) % frases.length;
-
-    setTimeout(() => {
-        frases[fraseIndex].style.display = 'none';
-    }, 2000); // Mostrar frase por 5 segundos
 }
 
 // Cambiar de frase cada 7 segundos
 setInterval(showFrase, 3000);
+
+// Inicializar la primera frase
+showFrase();
