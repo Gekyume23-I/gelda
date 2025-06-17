@@ -24,4 +24,4 @@ function showFrase() {
 }
 
 // Cambiar de frase cada 7 segundos
-setInterval(showFrase, 7000);
+setInterval(showFrase, 5000);
