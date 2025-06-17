@@ -1,15 +1,21 @@
-        // Esperamos que la página esté completamente cargada para reproducir el audio
+ // Intentar reproducir el audio cuando la página carga
         window.onload = function() {
             var audio = document.getElementById('sonido');
             
-            // Intentamos reproducir el audio
+            // Intentar reproducir el audio automáticamente
             audio.play().catch(function(error) {
                 console.log("No se pudo reproducir el audio automáticamente:", error);
                 
-                // Si no puede reproducirse automáticamente, pedimos al usuario que haga clic para activarlo
+                // Si el navegador bloquea la reproducción automática, pedimos al usuario que haga clic en la página
+                alert("Haz clic en cualquier parte de la página para comenzar la música.");
+
+                // Esperar el clic en cualquier parte de la página
                 document.body.addEventListener('click', function() {
-                    audio.play();
-                    console.log("Audio iniciado por el usuario.");
+                    audio.play().then(function() {
+                        console.log("Audio iniciado por el usuario.");
+                    }).catch(function(err) {
+                        console.log("Error al intentar reproducir el audio después del clic:", err);
+                    });
                 });
             });
         };
