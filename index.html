@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>Galería con sonidos por persona</title>
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página para mi Mejor Amiga</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <nav id="menu">
-    <a href="#" data-foto="irene.jpg" data-sonido="irene1.mp3">Irene</a>
-    <a href="#" data-foto="mario.jpg" data-sonido="mario.mp3">Mario</a>
-    <a href="#" data-foto="joseliyo.jpg" data-sonido="joseliyo.mp3">Joseliyo</a>
-  </nav>
+    <!-- Página de bienvenida -->
+    <div class="welcome-section">
+        <h1>Bienvenida a nuestro rincón virtual</h1>
+        <p>Este es un pequeño espacio dedicado a nuestra amistad. ¡Espero que te guste!</p>
+        <img src="bienvenida.jpg" alt="Foto de bienvenida" class="bienvenida-img">
+    </div>
 
-  <div id="contenedor">
-    <img id="foto" src="" alt="Foto de persona" />
-    <audio id="sonido" loop></audio>
-  </div>
+    <!-- Galería de fotos -->
+    <div class="gallery-section">
+        <h2>Recuerdos juntos</h2>
+        <div id="carousel" class="carousel">
+            <div class="carousel-images">
+                <img src="i1.webp" alt="Recuerdo 1" class="carousel-item">
+                <img src="i2.jpg" alt="Recuerdo 2" class="carousel-item">
+                <img src="i3.jpg" alt="Recuerdo 3" class="carousel-item">
+                <!-- Puedes agregar más fotos aquí -->
+            </div>
+        </div>
+        <div class="frases">
+            <p id="frase1">"La vida es más divertida cuando la compartes con alguien especial."</p>
+            <p id="frase2">"Donde hay amistad, siempre hay sonrisas."</p>
+        </div>
+    </div>
 
-  <script src="js/js.js"></script>
+    <!-- Reproductor de música -->
+    <audio id="audio" autoplay loop>
+        <source src="KAROL.mp3" type="audio/mp3">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+
+    <script src="script.js"></script>
 </body>
 </html>

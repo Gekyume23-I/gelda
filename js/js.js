@@ -1,25 +1,27 @@
-const links = document.querySelectorAll('#menu a');
-const foto = document.getElementById('foto');
-const sonido = document.getElementById('sonido');
+// Carrusel de imágenes
+let currentIndex = 0;
+const items = document.querySelectorAll('.carousel-item');
+const totalItems = items.length;
 
-links.forEach(link => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const nuevaFoto = link.getAttribute('data-foto');
-    const nuevoSonido = link.getAttribute('data-sonido');
+function showNextImage() {
+    currentIndex = (currentIndex + 1) % totalItems;
+    document.querySelector('.carousel-images').style.transform = `translateX(-${currentIndex * 100}%)`;
+}
 
-    // Cambiar imagen y hacer fade-in
-    foto.classList.remove('visible'); // para reiniciar fade-in
-    sonido.pause();
-    sonido.currentTime = 0;
+setInterval(showNextImage, 3000); // Cambiar imagen cada 3 segundos
+
+// Mostrar frases con animación
+let fraseIndex = 0;
+const frases = document.querySelectorAll('.frases p');
+
+function showFrase() {
+    frases[fraseIndex].style.display = 'block';
+    frases[fraseIndex].style.animation = 'showFrases 5s ease-in-out';
+    fraseIndex = (fraseIndex + 1) % frases.length;
 
     setTimeout(() => {
-      foto.src = nuevaFoto;
-      foto.classList.add('visible');
-    }, 100);
+        frases[fraseIndex].style.display = 'none';
+    }, 5000); // Mostrar frase por 5 segundos
+}
 
-    // Reproducir sonido
-    sonido.src = nuevoSonido;
-    sonido.play();
-  });
-});
+setInterval(showFrase, 7000); // Cambiar de frase cada 7 segundos

@@ -1,59 +1,85 @@
+/* Estilos generales */
 body {
-  margin: 0;
-  font-family: sans-serif;
-  background-color: #111;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff7e6; /* Fondo suave en tonos cálidos */
+    color: #333;
 }
 
-#menu {
-  margin-top: 20px;
-  display: flex;
-  gap: 15px;
+/* Página de bienvenida */
+.welcome-section {
+    text-align: center;
+    padding: 50px;
+    background-color: #ff9a8b; /* Color anaranjado suave */
+    color: white;
 }
 
-#menu a {
-  color: white;
-  text-decoration: none;
-  padding: 10px 20px;
-  background: #333;
-  border-radius: 10px;
-  transition: background 0.3s;
+.welcome-section h1 {
+    font-size: 2.5em;
 }
 
-#menu a:hover {
-  background: #555;
+.welcome-section p {
+    font-size: 1.2em;
 }
 
-#contenedor {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 400px;
+.bienvenida-img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
-#foto {
-  max-width: 300px;
-  max-height: 300px;
-  border-radius: 15px;
-  opacity: 0;
-  animation: girar 20s linear infinite;
-  transition: opacity 1s ease;
-  object-fit: cover;
+/* Galería de fotos */
+.gallery-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ffcd80; /* Color anaranjado cálido */
 }
 
-#foto.visible {
-  opacity: 1;
+.gallery-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
-@keyframes girar {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Carrusel */
+.carousel {
+    position: relative;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.carousel-images {
+    display: flex;
+    overflow: hidden;
+    transition: transform 1s ease-in-out;
+}
+
+.carousel-item {
+    width: 100%;
+    height: auto;
+}
+
+.frases {
+    margin-top: 30px;
+    font-style: italic;
+    color: #4f4f4f;
+}
+
+.frases p {
+    font-size: 1.2em;
+    display: none; /* Las frases se mostrarán con JavaScript */
+}
+
+/* Animación de frases */
+@keyframes showFrases {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
