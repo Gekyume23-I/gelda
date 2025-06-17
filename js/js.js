@@ -28,7 +28,7 @@ function showFrase() {
 }
 
 // Cambiar de frase cada 7 segundos
-setInterval(showFrase, 3000);
+setInterval(showFrase, 7000);
 
 // Inicializar la primera frase
 showFrase();
