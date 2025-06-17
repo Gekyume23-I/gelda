@@ -1,3 +1,9 @@
+ window.onload = function() {
+            var audio = document.getElementById('sonido');
+            audio.play().catch(function(error) {
+                console.log("No se pudo reproducir el audio automáticamente:", error);
+            });
+        }
 let currentIndex = 0;
 const items = document.querySelectorAll('.carousel-item');
 const totalItems = items.length;
