@@ -45,18 +45,18 @@ body {
 /* Carrusel */
 .carousel {
     position: relative;
-    max-width: 80%;
+    width: 80%;
     margin: 0 auto;
+    overflow: hidden; /* Para esconder las imágenes que se desplazan */
 }
 
 .carousel-images {
     display: flex;
-    overflow: hidden;
-    transition: transform 1s ease-in-out;
+    transition: transform 1s ease-in-out; /* Animación para el desplazamiento */
 }
 
 .carousel-item {
-    width: 100%;
+    width: 100%; /* Cada imagen ocupa el 100% del contenedor */
     height: auto;
 }
 
