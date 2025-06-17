@@ -20,7 +20,7 @@ function showFrase() {
 
     setTimeout(() => {
         frases[fraseIndex].style.display = 'none';
-    }, 3000); // Mostrar frase por 5 segundos
+    }, 2000); // Mostrar frase por 5 segundos
 }
 
 // Cambiar de frase cada 7 segundos
