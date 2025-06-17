@@ -1,24 +1,17 @@
- // Intentar reproducir el audio cuando la página carga
-        window.onload = function() {
-            var audio = document.getElementById('sonido');
+ // Función para mostrar las fotos y reproducir música
+        document.getElementById('startBtn').addEventListener('click', function() {
+            // Mostrar la galería de fotos
+            document.querySelector('.gallery-section').style.display = 'block';
             
-            // Intentar reproducir el audio automáticamente
+            // Reproducir la música
+            var audio = document.getElementById('sonido');
             audio.play().catch(function(error) {
                 console.log("No se pudo reproducir el audio automáticamente:", error);
-                
-                // Si el navegador bloquea la reproducción automática, pedimos al usuario que haga clic en la página
-                alert("Haz clic en cualquier parte de la página para comenzar la música.");
-
-                // Esperar el clic en cualquier parte de la página
-                document.body.addEventListener('click', function() {
-                    audio.play().then(function() {
-                        console.log("Audio iniciado por el usuario.");
-                    }).catch(function(err) {
-                        console.log("Error al intentar reproducir el audio después del clic:", err);
-                    });
-                });
             });
-        };
+            
+            // Ocultar el botón después de hacer clic
+            document.getElementById('startBtn').style.display = 'none';
+        });
 
         // Configuración del carrusel de imágenes
         let currentIndex = 0;
